@@ -1,0 +1,27 @@
+חלק א.
+1.1. INSERT INTO students (Id, FullName, IdentityNumber, BirthDate, ClassId)
+    VALUES
+    (Id, 'Jennifer Thomas', 999411611691, '2000/07/04', 2),
+1.2. (Id, 'Michael Clark', 999494918151, '1992/09/18', 4)
+2.  INSERT INTO lecturers (LecturerName, Email)
+    VALUES
+    ('John Smith', 'jsmith@university.edu.il')
+3.1. INSERT INTO study_hours (Id, ClassId, MorningLecturerId, AfternoonLecturerId)
+    VALUES
+    (Id, 13, 42, 38),
+3.2. (Id, 38, 17, 25)
+
+חלק ב.
+4.   SELECT * FROM `classes`
+5.   SELECT `LecturerName` FROM `lecturers` WHERE `LecturerName` LIKE 'M%'
+6.   SELECT * FROM `students` ORDER BY `IdentityNumber`
+   SELECT * FROM `students` ORDER BY `FullName`
+
+חלק ג.
+8.   UPDATE students SET FullName = 'James Smith' WHERE `IdentityNumber` = 999160426740
+9.   UPDATE lecturers SET Email = 'noemail@school.com' WHERE `Email` LIKE ''
+10. לא כתוב למה לעדכן
+
+חלק ד.
+11.  DELETE FROM `study_hours` WHERE `ClassId` > 4
+12.  DELETE FROM `students` WHERE `FullName` LIKE 'Laura Brown'
