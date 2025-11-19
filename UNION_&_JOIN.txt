@@ -1,0 +1,25 @@
+חלק א.
+1.   SELECT `Id`, `LecturerName` FROM lecturers UNION ALL SELECT `Id`, `LecturerName` FROM lecturers_new; -> 19
+   SELECT `Id`, `LecturerName` FROM lecturers UNION SELECT `Id`, `LecturerName` FROM lecturers_new;  -> 18
+
+2.   SELECT * FROM `students` UNION SELECT * FROM students_new;
+      לא, כי שמות העמודות לא שווים בשני הטבלאות
+
+3.   SELECT * FROM `courses` UNION SELECT * FROM courses_new;
+
+
+חלק ב.
+4. SELECT students_temp.FullName, classes.Class, courses.CourseName
+   FROM students_temp
+   INNER JOIN classes
+   ON students_temp.ClassId = classes.Id
+   INNER JOIN courses
+   ON classes.CourseId = courses.Id
+
+5. SELECT lecturers.LecturerName
+   FROM lecturers
+   LEFT JOIN study_hours
+   ON lecturers.Id = study_hours.MorningLecturerId 
+   OR lecturers.Id = study_hours.AfternoonLecturerId
+   WHERE study_hours.MorningLecturerId IS NULL AND study_hours.AfternoonLecturerId IS NULL
+
