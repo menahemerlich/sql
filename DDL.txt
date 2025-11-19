@@ -1,0 +1,54 @@
+חלק א.
+1. CREATE DATABASE IF NOT EXISTS school
+חלק ב.
+2.  CREATE TABLE IF NOT EXISTS teachers_backup (
+   Id INT AUTO_INCREMENT PRIMARY KEY,
+   TeacherName VARCHAR(50) NOT NULL,
+   Email VARCHAR(70) NOT NULL,
+   Phone VARCHAR(15)
+   )
+4. CREATE TABLE study_hours AS
+   SELECT *
+   FROM study_hours_extended
+   WHERE classId IN (1, 2, 3, 4, 5)
+חלק ג.
+4.  ALTER TABLE lecturers
+     ADD COLUMN Email VARCHAR(70) NOT NULL
+5. ALTER TABLE lecturers
+   MODIFY COLUMN LecturerName VARCHAR(80) NOT NULL
+6. ALTER TABLE classes
+   DROP COLUMN status
+חלק ד.
+7. DROP TABLE IF EXISTS teachers_backup
+חלק ה.
+8. CREATE TABLE students LIKE students_temp;
+
+   INSERT INTO students
+   SELECT *
+   FROM students_temp
+9. ALTER TABLE students
+   DROP COLUMN personlId
+10.ALTER TABLE students
+   ADD COLUMN age TINYINT UNSIGNED
+11.DELETE FROM students
+   WHERE BirthDate < '1992-01-01
+12.ALTER TABLE students
+   ADD CONSTRAINT chk_birthdate_range
+   CHECK (BirthDate BETWEEN '1992-01-01' AND '2000-12-31');
+13.DROP TABLE IF EXISTS students_temp;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
